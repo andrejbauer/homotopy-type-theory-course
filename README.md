@@ -6,11 +6,35 @@ Course overview.
 
 ###  Background & bundles
 
+#### Background
+
+##### What does (a part of) math deal with?
+
+##### Distinguishing between objects: relax, distinguish, stiffen
+
+##### Homotopy theory as a natural domain of algebraic invariants
+
+##### Homotopy theory as means of rephrasing a geometric problem
+
+#### Bundles
+
+##### Bundles are omnipresent
+
+##### Vector bundle and its frame bundle
+
+##### Bundles with structure group
+
+##### Principal bundles and classification
+
+##### Lifting properties
+
+##### Homotopization of bundles
+
 ###  Fibrations of topological spaces, and their classification
 
 ###  Cofibrations & model structure
 
-###  Loops spaces, suspensions and other gadgets
+###  Loop spaces, suspensions and other gadgets
 
 ###  Chain complexes
 
