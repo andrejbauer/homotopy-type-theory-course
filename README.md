@@ -1,56 +1,52 @@
-# Homotopy type theory
+# Homotopy (type) theory
 
-Course overview.
+A doctoral course on homotopy theory and homotopy type theory given by
+[Andrej Bauer](http://www.andrej.com) and [Jaka Smrekar](https://www.fmf.uni-lj.si/~smrekar/)
+at the [Faculty of mathematics and Physics](http://www.fmf.uni-lj.si/), University of Ljubljana.
 
-## Homotopy theory
+## Course overview
 
-###  Background & bundles
+### Homotopy theory
 
-#### Background
+####  Background & bundles
 
-##### What does (a part of) math deal with?
+##### Background
 
-##### Distinguishing between objects: relax, distinguish, stiffen
-
-##### Homotopy theory as a natural domain of algebraic invariants
-
-##### Homotopy theory as means of rephrasing a geometric problem
+* What does (a part of) math deal with?
+* Distinguishing between objects: relax, distinguish, stiffen
+* Homotopy theory as a natural domain of algebraic invariants
+* Homotopy theory as means of rephrasing a geometric problem
 
 #### Bundles
 
-##### Bundles are omnipresent
+* Bundles are omnipresent
+* Vector bundle and its frame bundle
+* Bundles with structure group
+* Principal bundles and classification
+* Lifting properties
+* Homotopization of bundles
 
-##### Vector bundle and its frame bundle
+####  Fibrations of topological spaces, and their classification
 
-##### Bundles with structure group
+####  Cofibrations & model structure
 
-##### Principal bundles and classification
+####  Loop spaces, suspensions and other gadgets
 
-##### Lifting properties
+####  Chain complexes
 
-##### Homotopization of bundles
+####  Kan simplicial sets
 
-###  Fibrations of topological spaces, and their classification
+### Homotopy type theory
 
-###  Cofibrations & model structure
+#### Type theory (motivated by simplicial sets): `Π`, `Σ`
 
-###  Loop spaces, suspensions and other gadgets
+#### Identity types as path objects (applications)
 
-###  Chain complexes
+#### Logic from geometry (propositions-as-types)
 
-###  Kan simplicial sets
+#### Synthetic homotopy theory: circle, suspension
 
-## Homotopy type theory
+#### Univalence axiom
 
-### Type theory (motivated by simplicial sets): ∏, Σ
-
-### Identity types as path objects (applications)
-
-### Logic from geometry (propositions-as-types)
-
-### Synthetic homotopy theory: circle, suspension
-
-### Univalence axiom
-
-### Applications of univalence: loop space, π₁(S¹) = Z
+#### Applications of univalence: loop space, `π₁(S¹) = Z`
 
