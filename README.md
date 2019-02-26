@@ -50,3 +50,7 @@ at the [Faculty of mathematics and Physics](http://www.fmf.uni-lj.si/), Universi
 
 #### Applications of univalence: loop space, `π₁(S¹) = Z`
 
+## Literature and resources
+
+* J. Davis & P. Kirk, [Lecture Notes in Algebraic Topology](http://www.indiana.edu/~jfdavis/teaching/m623/book.pdf) (Chapter 4)
+* Univalent foundations program, [Homotopy type theory: Univalent foundations of mathematics](https://homotopytypetheory.org/book/)
