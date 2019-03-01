@@ -53,4 +53,6 @@ at the [Faculty of mathematics and Physics](http://www.fmf.uni-lj.si/), Universi
 ## Literature and resources
 
 * J. Davis & P. Kirk, [Lecture Notes in Algebraic Topology](http://www.indiana.edu/~jfdavis/teaching/m623/book.pdf) (Chapter 4)
+* M. Hovey, [Model categories](https://web.math.rochester.edu/people/faculty/doug/otherpapers/hovey-model-cats.pdf) (Chapters 1-3)
+* P. G. Goerss & J. F. Jardine, [Simplicial homotopy theory](https://www.springer.com/us/book/9783034601887) (Chapters I and II)
 * Univalent foundations program, [Homotopy type theory: Univalent foundations of mathematics](https://homotopytypetheory.org/book/)
