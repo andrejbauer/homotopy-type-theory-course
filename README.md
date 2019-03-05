@@ -81,19 +81,26 @@ There will be two take-home exams, one for each part of the course.
 * Basic homotopy-theoretic constructions in terms of identity types:
     * the groupoid of paths
     * contractible spaces
+* Iterated identity types
 
-#### Logic from geometry (propositions-as-types)
+#### Truncations
 
-* Propositional truncation as a type-theoretic construction
-* Propositional truncation as an operation on (Kan) simplicial sets
+* Propositions, sets, and h-levels
+* Truncation as a type-theoretic construction
+* Truncation as an operation on (Kan) simplicial sets
 * The Curry-Howard correspondence (using propostional truncation)
-* Basic homotopy-theoretic constructions in terms of propositional truncation
+* Basic homotopy-theoretic constructions in terms of truncation:
+    * loop space vs. fundamental group
+    * path-connectedness vs. contractibility
+    * surjectivity vs. split epimorphism
+* Whiteheads's principle
 
 #### Synthetic homotopy theory
 
 * Inductive types, examples
 * Higher-inductive types (HITs)
 * Examples: circle, interval, suspension
+* Truncations as HITs
 
 #### Univalence axiom
 
