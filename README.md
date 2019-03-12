@@ -40,7 +40,7 @@ at the [Faculty of mathematics and Physics](http://www.fmf.uni-lj.si/), Universi
 
 * Homotopy extension property, cofibration, Eckmann-Hilton duality
 * Pushouts and retracts of cofibrations are cofibrations
-* Any map decomposes functorially
+* Any map decomposes functorially as a composite of a cofibration followed by a `trivial` fibration
 * Quillen closed model category
 * Model category on Top with homotopy equivalences, Hurewicz fibrations, and Hurewicz cofibrations
 
