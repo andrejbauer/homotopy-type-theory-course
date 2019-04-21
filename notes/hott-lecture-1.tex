@@ -1,0 +1,450 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{mathpartir}
+\usepackage{booktabs}
+
+\input{macros}
+
+\begin{document}
+\title{Lecture 1: Type theory}
+\author{Andrej Bauer}
+\maketitle
+
+\begin{abstract}
+  Lecture notes for the second part of the doctoral course ``Homotopy (Type)
+  Theory'', taught by Jaka Smrekar and Andrej Bauer in the Spring 2019 at the
+  Department of Mathematics, Faculty of Mathematics and Physics, University of
+  Ljubljana.
+\end{abstract}
+
+
+\section{What is type theory?}
+\label{sec:what-type-theory}
+
+In this lecture we give an introduction to type theory aimed at mathematicians
+who are possibly unacquainted with logic and theoretical computer science. In
+fact, the whole series of lectures will consciously avoid discussing the
+connections between type theory and computer science.
+
+\subsection{Type theory as a foundation}
+
+Type theory is a \emph{foundational theory}. This means that it stands on its
+own, without any support from logic and set theory, and it aims to be general
+enough to encompass a great deal of mathematical activity. While this sounds a
+bit scary, it also means that type theory can in principle be understood and
+used without prior knowledge of algebra, category theory, analysis, etc. The
+situation is not unlike many others in mathematics, where we limit ourselves to
+a certain style of reasoning. For example, when doing planar geometry we only
+use the basic geometric objects (points, segments, lines, circles) and we adhere
+to the axioms of geometry.
+
+Type theory is not a replacement, or an alternative, to logic and set theory.
+Rather, it is a \emph{generalization} of existing foundations that
+\emph{expands} the view of the mathematical universe. In later lectures we shall
+identify logic and sets as just two homotopy levels of the type-theoretic
+mathematical universe.
+
+There are several variants of type theory. We shall focus on \emph{homotopy type
+  theory (HoTT)}, a recently developed version which has close connections to
+abstract and sophisticated topics, such as $\infty$-groupoids and
+$(\infty,1)$-toposes. However, we will steer clear of a precise technical
+explanation on how type theory relates to these, as that would require a course
+on its own. Instead, we will explain types intuitively, relying on your prior
+mathematical knowledge and intuitions about geometry and space.
+
+Of course, type theory itself will be formulated quite precisely and as
+rigorously as any other mathematics (and more so, because it has all been
+formalized and verified by computer programs known as proof assistants).
+
+
+\subsection{A theory of constructions}
+
+In type theory, we take as the central notion \emph{construction} of
+mathematical objects. Constructions permeate mathematics, and are at least as
+important as proofs. In fact proofs themselves are a certain kind of
+constructions: we construct proofs from axioms using the logical rules of
+reasoning.
+
+By taking constructions as primitive, we are in good company. Proposition~1 of
+the First book of Euclid's Elements~\cite{fitzpatrick09:_euclid_elemen} reads:
+%
+\begin{quote}
+  \textit{To construct an equilateral triangle on a given finite straight-line.}
+\end{quote}
+%
+Mathematics started with a construction problem, not a statement of truth!
+
+Euclid's Proposition~1 is not just any kind of construction but rather a
+\emph{dependent} one: the constructed equilateral triangle depends on the line
+segment. Dependence is a basic phenomenon in mathematics, thus our theory will
+be a theory of \emph{dependent constructions}.
+
+\section{The basics of type theory}
+
+Let us proceed with an overview of the basic concepts of type theory, namely
+\emph{types} and \emph{points} of types.
+
+A type is a description of a certain kind of construction. For example, we
+will introduce the type of natural numbers~$\Nat$ by explaining how to
+construct natural numbers, and how to use them. When an object is constructed
+according to these rules, we say that its type is~$\Nat$. In fact, every
+construction must always be made according to the rules of one of the types, and
+then it is of course of that type. It cannot happen that a construction is of
+two different types, for each type will prescribe a different way of building
+objects.
+
+It is important to distinguish a type from its \emph{extension}. A type
+describes a way of constructing objects. The extension of a type is the
+collection (we avoid saying ``set'' lest we suggest unwarranted intuitions) of
+all things that may be constructed according to the given rules. It may happen
+that two different types have the same extension. This already happens quite
+naturally in informal mathematics. Consider:
+%
+\begin{enumerate}
+\item[($P$)] the even primes larger than three,
+\item[($L$)] the straight lines in the plane that are perpendicular to themselves.
+\end{enumerate}
+%
+There are no even primes larger than three, and no straight lines perpendicular
+to themselves, so the extensions of~$P$ and~$L$ are both vacuous. However, it
+would be absurd to say that the meanings of ``even prime larger than three'' and
+``straigh line perpendicular to itself'' coincide!
+
+If $A$ is a type and $t$ is a construction made according to the rules of~$A$,
+then we write
+%
+\begin{equation*}
+  t : A.
+\end{equation*}
+%
+We call $t$ an \emph{element} or a \emph{point} of~$A$. The word ``element''
+makes one think that~$A$ is a collection of things (which it is not, but its
+extension is), while ``point'' emphasizes the view that types are like spaces.
+
+People close to logic, as well as theoretical computer scientists, sometimes say
+that~$t$ is a \emph{term} of type~$A$, as if constructions were just formal
+symbolic expressions. We eschew this view, because it is analogous to thinking
+that a function is a symbolic expression with the letter~$x$ appearing in it.
+
+Just making constructions without ever doing anything with them would lead to
+pretty boring mathematics. We should have the ability to \emph{deconstruct} and
+\emph{use} constructed objects. Thus in type theory there are generally two
+kinds of operations, the constructors and the deconstructors.
+
+In addition, there may be several ways of constructing the same object, for
+example by undoing some construction steps (using deconstructors), and then
+redoing them. Consequently, we should be able to compare the constructed
+objects. For this purpose we introduce \emph{equations}. An equation
+%
+\begin{equation*}
+  s \equiv_A t,
+\end{equation*}
+%
+states that points $s$ and $t$ of type~$A$ are equal.
+%
+Similarly, we may state that two types $A$ and $B$ are the same, written as
+%
+\begin{equation*}
+  A \equiv B.
+\end{equation*}
+%
+It only makes sense to compare points of the same type. That is, if $s : A$ and
+$t : B$ then $s \equiv_A t$ is not even false --- it is senseless, unless we can
+establish $A \equiv B$.
+
+Equality satisfies the usual rules of manipulation: reflexivity, symmetry,
+transitivity, equals may be subsituted for equals. But since there is no logic,
+we cannot deny an equality: there is no such thing as $\lnot (A \equiv B)$ or
+$A \not\equiv B$. The situation is similar to universal algebra, where
+structures are described in terms of operations and equations only.
+
+There is one last ingridient that we need to address, namely \emph{dependency}.
+Everywhere in mathematics we build objects and spaces which depend on
+parameters. An example from ordinary mathematics: the space of real-valued
+continuous maps $\mathcal{C}([a,b], \mathbb{R})$ is not really a single space. It
+is a \emph{family} of spaces, one for each pair of real numbers $(a,b)$ such
+that $a < b$. We say that $\mathcal{C}([a,b], \mathbb{R})$ \emph{depends} on the
+parameters~$a$ and~$b$. Let us also note that $\mathbb{R}$ is \emph{not} a
+parameter, but instead a fixed space that has been previously constructed.
+
+We shall write
+%
+\begin{equation*}
+  \istype{A}
+\end{equation*}
+%
+to indicate a type~$A$. A type which depends on a parameter $x : A$ is indicated by
+%
+\begin{equation*}
+  x : A \vdash \istype{B(x)}
+\end{equation*}
+%
+More generally,
+%
+\begin{equation*}
+  x_1 : A_1, x_2 : A_2(x_1), \ldots, x_n : A_n(x_1, \ldots, x_{n-1}) \vdash
+  \istype{B(x_1, \ldots, x_n)}
+\end{equation*}
+%
+signfies a type depending on several parameters $x_1, \ldots, x_n$.
+
+Not only do types depend on parameters, but so do their points. We write
+%
+\begin{equation*}
+  x : A \vdash s(x) : B(x).
+\end{equation*}
+%
+when $s(x)$ is a point of type $B(x)$, with both the point and the type
+depending on a parameter~$x : A$. Perhaps an informal example will help: both
+the interval $[a,b]$ and its midpoint $(a + b)/2$ depends on real-valued
+parameters $a$ and $b$.
+
+In ordinary mathematics there is no standard notation for indicating precisely
+on which parameters a given construction depends. Mathematical prose relies on
+the reader's ability to determine the dependencies from the context. We shall do
+so as well, except when we need to be precise about the rules of type theory.
+
+To summarize, the basic building blocks of type theory are as follows:
+%
+\begin{center}
+\begin{tabular}{lc}
+  \toprule
+  \textsc{Concept} & \textsc{Notation} \\
+  \midrule
+  type             & $\istype{A}$ \\
+  point            & $t : A$ \\
+  dependent type   & $x : A \vdash \istype{B(x)}$ \\
+  dependent point  & $x : A \vdash s(x) : B(x)$ \\
+  equal types      & $A \equiv B$ \\
+  equal points     & $s \equiv_A t$ \\
+  \bottomrule
+\end{tabular}
+\end{center}
+%
+There is nothing else. Stating that $t$ does \emph{not} have type~$A$ is not
+part of type theory, nor is it part of type theory to consider a point~$t$
+without a type. You will have to take it on faith that these restrictions exist
+for good reasons, and that eventually they will allow us to reap some benefits.
+(Compare the situation to universal algebra: restricting the axioms to be just
+equalities is, well, restrictive, but the resulting theory is still very rich.)
+
+\subsection{Basic type-theoretic constructions}
+
+It is high time we actually introduce some specific types. Let us begin with the
+very basic ones. With these we shall not be able to construct anything that
+would excite homotopy theorists, say a circle or a suspension. We need to learn
+to walk before we can run.
+
+There is an established method for introducing a new type:
+%
+\begin{itemize}
+\item \emph{formation:} we postulate rules which explain how the new type is made
+\item \emph{construction:} we postulate rules for constructing the points of the new type
+\item \emph{deconstruction:} we postulate rules for deconstructing or using the points of the new type
+\item \emph{equations:} we postulate equations which explain what happens when a
+  construction is followed by a deconstruction, or vice versa.
+\end{itemize}
+%
+
+\subsubsection{The unit type $\Unit$}
+
+Our first example is the \emph{unit} type. Intuitively speaking, it corresponds to a one-point space. Here are the rules:
+%
+\begin{itemize}
+\item formation: $\Unit$ is a type,
+\item construction: $\pt$ is a point of $\Unit$,
+\item deconstruction: there are no deconstructors,
+\item equations: any two points $s$ and $t$ of type $\Unit$ are equal.
+\end{itemize}
+%
+There are no deconstructors because nothing useful can be extracted from~$\pt$.
+Or to put it another way, $\pt$ has no internal structure, hence there is
+nothing to deconstruct.
+
+Type theorists would write the rules for the unit type as follows:
+%
+\begin{mathpar}
+  \infer{ }{\istype{\Unit}}
+  \and
+  \infer{ }{\pt : \Unit}
+  \and
+  \infer{s : \Unit \\ t : \Unit}{s \equiv_\Unit t}
+\end{mathpar}
+%
+Such ``fractions'' should be read as inference rules: above the line are the
+\emph{premises}, and below the line is the \emph{conclusion}. We only
+occasionally use inference rules, but be warned that hard-core type theorists
+thrive on writing pages and pages of inference rules, and they can read them
+really fast, too.
+
+\subsubsection{The empty type $\Empty$}
+
+Next we have the empty type $\Empty$, which intuitively corresponds to the empty
+space. Thus, not suprisingly, it will have no constructors. But how do we say
+that there is nothing in it? Here are the rules:
+%
+\begin{itemize}
+\item formation: $\Empty$ is a type,
+\item construction: there are no constructors
+\item deconstruction: for every $e : \Empty$ and a type~$A$ there is a point $\absurd{A}{e} : A$.
+\item equations: if $e : \Empty$, then any two points of any type are equal.
+\end{itemize}
+%
+Written as inference rules, these are:
+%
+\begin{mathpar}
+  \infer{ }{\istype{\Empty}}
+  \and
+  \infer{e : \Empty \\ \istype{A}}{\absurd{A}{e} : A}
+  \and
+  \infer{e : \Empty \\ s : A \\ t : A}{s \equiv_A t}
+\end{mathpar}
+%
+If you know a little bit of category theory you should draw an analogy with the
+initial object: the deconstructor $\absurd{A}{t}$ gives us a way of constructing
+a point of any type~$A$ from a point $e : \Empty$. This is the type-theoretic
+way of saying that ``$\Empty$ is as empty as any other type''. The equation rule
+expresses the absurdity of having a point in~$\Empty$, at the level of
+equations.
+
+\subsubsection{The booleans $\Bool$}
+
+The type of $\Bool$ is a space with two distinct points. We thus have:
+%
+\begin{itemize}
+\item formation: $\Bool$ is a type,
+\item constructors: $\tru$ and $\fal$ are points of $\Bool$.
+\end{itemize}
+%
+We carefully subscripted the points $\tru$ and $\fal$ with ${}_\Bool$ in order
+to distinguish them from the empty and the unit type, and from the natural
+numbers zero and one. We must do so because a point can only ever have one type.
+When such formalism becomes cumbersome we shall lapse into using the same symbol
+for several different points, but until then let us be very explicit.
+
+The deconstructor and the equations for $\Bool$ are as follows: given a
+dependent type $x : \Bool \vdash \istype{A(x)}$, points $s : A(\fal)$ and
+$t : A(\tru)$, and a point $b : \Bool$, there is a point
+%
+\begin{equation}
+  \label{eq:ind-bool}%
+  \ind{\Bool}^A(b, s, t) : A(b)
+\end{equation}
+%
+such that
+%
+\begin{align*}
+  \ind{\Bool}^A(\fal, s, t) &\equiv_{A(\fal)} s, \\
+  \ind{\Bool}^A(\tru, s, t) &\equiv_{A(\tru)} t.
+\end{align*}
+%
+Two alternative, but less explicit notations for~\eqref{eq:ind-bool} are
+%
+\begin{equation*}
+  \cond{b}{s}{t}
+  \qquad
+  \qquad
+  \text{and}
+  \qquad
+  \qquad
+  \begin{cases}
+    s & \text{if $b \equiv_\Bool \fal$,} \\
+    t & \text{if $b \equiv_\Bool \tru$.}
+  \end{cases}
+\end{equation*}
+%
+
+
+
+\subsubsection{Dependent products $\dprod{x : A} B(x)$}
+
+\subsubsection{The natural numbers $\Nat$}
+
+\subsubsection{Dependent sums $\dsum{x : A} B(x)$}
+
+\subsubsection{The universe $\Univ$}
+
+
+\subsection{Derived constructions}
+
+\subsubsection{Exponentials $A \to B$}
+
+\subsubsection{Simple products $A \times B$}
+
+\subsubsection{Sums $A + B$}
+
+\subsection{What about $\cap$ and $\cup$?}
+
+
+\section{The homotopy-theoretic reading of types}
+
+So far we have been dealing mostly with pure formalism. Is there a way to
+explain what the types really are? Yes, there are several ways! Type theory is
+so general that it can be understood in many ways: types are datatypes in a
+programming language, types are sets, types are symmetric transitive relations
+on algebraic lattices, types are spaces. It is this last explanation which we
+will rely on and that we now briefly outline.
+
+Keep in mind that what follows is an informal explanation of how to imagine
+types. We are not defining anything, nor are we introducing any new mathematics.
+We are just going to draw helpful pictures.
+
+Let us augment our table of basic concepts with the homotopy-theoretic explanation:
+%
+\begin{center}
+\begin{tabular}{lcc}
+  \toprule
+  \textsc{Concept} & \textsc{Notation} & \textsc{Homotopy theory} \\
+  \midrule
+  type             & $\istype{A}$ & space \\
+  point            & $t : A$ & point \\
+  dependent type   & $x : A \vdash B(x)$ & fibration $B$ over $A$\\
+  dependent point  & $x : A \vdash s(x) : B(x)$ & section of $B$ \\
+  equal types      & $A \equiv B$ & equal spaces \\
+  equal points     & $s \equiv_A t$ & equal points  \\
+  \bottomrule
+\end{tabular}
+\end{center}
+%
+The most revealing is the interpretation of dependent type: a type $B(x)$
+depending on $x : A$ is a fibration with base $A$ whose fiber at~$x$ is the
+space~$B(x)$.
+
+We may proceed with the basic constructions:
+%
+\begin{center}
+\begin{tabular}{lcc}
+  \toprule
+  \textsc{Concept} & \textsc{Notation} & \textsc{Homotopy theory} \\
+  \midrule
+  unit type        & $\Unit$    & one-point space \\
+  empty type       & $\Empty$   & empty space \\
+  boolean type     & $\Bool$   & two-point discrete space \\
+  natural numbers  & $\Nat$     & discrete space $\mathbb{N}$ \\
+  dependent sum    & $\dsum{x : A} B(x)$ & total space \\
+  dependent product & $\dprod{x : A} B(x)$ & space of sections \\
+  \bottomrule
+\end{tabular}
+\end{center}
+%
+All of these should be accompanied with nice pictures. For instance, the
+induction principle for~$\Nat$ can be seen as giving a way of producing a
+section of a fibration over~$\Nat$.
+
+You will notice that we have not given a homotopy-theoretic interpretation of
+the universe~$\Univ$. What would that be? A space of all spaces, presumably, but
+have we ever seen such a thing in homotopy theory? Things are going to get
+interesting.
+
+\bibliographystyle{plain}
+\bibliography{notes}
+
+\end{document}
+
+
