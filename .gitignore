@@ -240,3 +240,4 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
+notes/*.pdf

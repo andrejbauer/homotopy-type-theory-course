@@ -77,7 +77,8 @@ There will be two take-home exams, one for each part of the course.
 
 * Type theory as a theory of constructions
 * The notion of a dependent type
-* Types as Kan simplicial sets
+* Types as sets, dependent types as families of sets
+* Types as spaces, dependent types as fibrations
 * Basic type-theoretic constructions:
     * dependent products
     * dependent sums
