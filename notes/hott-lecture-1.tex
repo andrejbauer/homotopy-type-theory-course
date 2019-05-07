@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{amsart}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -116,6 +116,9 @@ to themselves, so the extensions of~$P$ and~$L$ are both vacuous. However, it
 would be absurd to say that the meanings of ``even prime larger than three'' and
 ``straigh line perpendicular to itself'' coincide!
 
+\subsection{Types, points, and equalities}
+\label{sec:types-points-equal}
+
 If $A$ is a type and $t$ is a construction made according to the rules of~$A$,
 then we write
 %
@@ -164,93 +167,103 @@ we cannot deny an equality: there is no such thing as $\lnot (A \equiv B)$ or
 $A \not\equiv B$. The situation is similar to universal algebra, where
 structures are described in terms of operations and equations only.
 
-There is one last ingridient that we need to address, namely \emph{dependency}.
-Everywhere in mathematics we build objects and spaces which depend on
-parameters. An example from ordinary mathematics: the space of real-valued
-continuous maps $\mathcal{C}([a,b], \mathbb{R})$ is not really a single space. It
-is a \emph{family} of spaces, one for each pair of real numbers $(a,b)$ such
-that $a < b$. We say that $\mathcal{C}([a,b], \mathbb{R})$ \emph{depends} on the
-parameters~$a$ and~$b$. Let us also note that $\mathbb{R}$ is \emph{not} a
-parameter, but instead a fixed space that has been previously constructed.
+\subsection{Dependent types and points}
+\label{sec:depend-types-points}
 
-We shall write
-%
-\begin{equation*}
-  \istype{A}
-\end{equation*}
-%
-to indicate a type~$A$. A type which depends on a parameter $x : A$ is indicated by
+There is one last phenomenon that requires out attention, namely
+\emph{dependency}. Everywhere in mathematics we build objects and spaces which
+depend on parameters. For instance, the space of real-valued continuous maps on
+a closed interval, $\mathcal{C}([a,b], \mathbb{R})$, is not really a single
+space. It is a \emph{family} of spaces, one for each pair~$(a,b)$ of endpoints
+of the interval~$[a,b]$. We say that $\mathcal{C}([a,b], \mathbb{R})$
+\emph{depends} on the parameters~$a$ and~$b$. Let us also note that $\mathbb{R}$
+is \emph{not} a parameter, but instead a fixed space that has been previously
+constructed.
+
+Not only do types depend on parameters, but so do their points. The midpoint
+$(a+b)/2$ of the closed interaval $[a,b]$ is not a fixed point, because it and
+its type both depend on the parameters~$a$ and~$b$.
+
+Formal type theory provides an explicit notation for dependency, namely
 %
 \begin{equation*}
   x : A \vdash \istype{B(x)}
 \end{equation*}
 %
-More generally,
+indicates that $B(x)$ is a type which depends on a parameter $x : A$, and similarly
 %
 \begin{equation*}
-  x_1 : A_1, x_2 : A_2(x_1), \ldots, x_n : A_n(x_1, \ldots, x_{n-1}) \vdash
-  \istype{B(x_1, \ldots, x_n)}
+  x : A \vdash t(x) : B(x)
 \end{equation*}
 %
-signfies a type depending on several parameters $x_1, \ldots, x_n$.
+that $t(x)$ is a point of $B(x)$ which depends on $x : A$. Such formalism is
+necessary if one studies the meta-theory of type theory, but for us a more
+familiar notation will suffice.
 
-Not only do types depend on parameters, but so do their points. We write
+In \S\ref{sec:universe} we shall introduce the \emph{universe~$\Univ$}, which is
+the type of all (small) types. It captures the idea that types themselves are
+constructions. Then in \S\ref{sec:product} we will learn how to form the
+\emph{function type $A \to B$} of all maps from~$A$ to~$B$. Using these, we may
+express the fact that $A$ is a type by stating that~$A$ is a point of~$\Univ$,
 %
 \begin{equation*}
-  x : A \vdash s(x) : B(x).
+  A : \Univ.
 \end{equation*}
 %
-when $s(x)$ is a point of type $B(x)$, with both the point and the type
-depending on a parameter~$x : A$. Perhaps an informal example will help: both
-the interval $[a,b]$ and its midpoint $(a + b)/2$ depends on real-valued
-parameters $a$ and $b$.
+You should be asking whether $\Univ : \Univ$, a question that is addressed in \S\ref{sec:universe}.
 
-In ordinary mathematics there is no standard notation for indicating precisely
-on which parameters a given construction depends. Mathematical prose relies on
-the reader's ability to determine the dependencies from the context. We shall do
-so as well, except when we need to be precise about the rules of type theory.
+A type $B$ depending on a parameter of type~$A$ is simply a map from $A$
+to $\Univ$,
+%
+\begin{equation*}
+  B : A \to \Univ.
+\end{equation*}
+%
+We can manage without a special notation for dependent points.
 
 To summarize, the basic building blocks of type theory are as follows:
-%
+
+\medskip
 \begin{center}
 \begin{tabular}{lc}
   \toprule
   \textsc{Concept} & \textsc{Notation} \\
   \midrule
-  type             & $\istype{A}$ \\
+  type             & $A : \Univ$ \\
   point            & $t : A$ \\
-  dependent type   & $x : A \vdash \istype{B(x)}$ \\
-  dependent point  & $x : A \vdash s(x) : B(x)$ \\
+  dependent type   & $B : A \to \Univ$ \\
+  dependent point  & $x : A \vdash t(x) : B(x)$ \\
   equal types      & $A \equiv B$ \\
   equal points     & $s \equiv_A t$ \\
   \bottomrule
 \end{tabular}
 \end{center}
-%
-There is nothing else. Stating that $t$ does \emph{not} have type~$A$ is not
-part of type theory, nor is it part of type theory to consider a point~$t$
-without a type. You will have to take it on faith that these restrictions exist
-for good reasons, and that eventually they will allow us to reap some benefits.
-(Compare the situation to universal algebra: restricting the axioms to be just
-equalities is, well, restrictive, but the resulting theory is still very rich.)
+\medskip
+
+There is nothing else. For instance, stating that $t$ does \emph{not} have
+type~$A$, or that an equation does not hold, falls outside of the realm of type
+theory. You will have to take it on faith that these restrictions exist for good
+reasons, and that eventually they will allow us to reap some benefits. (Compare
+the situation to universal algebra: restricting the axioms to be just equalities
+is, well, restrictive, but the resulting theory is still very rich.)
+
 
 \subsection{Basic type-theoretic constructions}
-
-It is high time we actually introduce some specific types. Let us begin with the
-very basic ones. With these we shall not be able to construct anything that
-would excite homotopy theorists, say a circle or a suspension. We need to learn
-to walk before we can run.
 
 There is an established method for introducing a new type:
 %
 \begin{itemize}
-\item \emph{formation:} we postulate rules which explain how the new type is made
-\item \emph{construction:} we postulate rules for constructing the points of the new type
-\item \emph{deconstruction:} we postulate rules for deconstructing or using the points of the new type
+\item \emph{formation:} we postulate rules which explain how the new type is constructed,
+\item \emph{construction:} we postulate rules for constructing the points of the new type,
+\item \emph{deconstruction:} we postulate rules for deconstructing or using the points of the new type,
 \item \emph{equations:} we postulate equations which explain what happens when a
   construction is followed by a deconstruction, or vice versa.
 \end{itemize}
 %
+Pay attention to the difference between the formation and the construction
+rules: latter explain how to form the type itself, while the latter explain how to
+form the points of the type.
+
 
 \subsubsection{The unit type $\Unit$}
 
@@ -270,7 +283,7 @@ nothing to deconstruct.
 Type theorists would write the rules for the unit type as follows:
 %
 \begin{mathpar}
-  \infer{ }{\istype{\Unit}}
+  \infer{ }{\Unit : \Univ}
   \and
   \infer{ }{\pt : \Unit}
   \and
@@ -299,9 +312,9 @@ that there is nothing in it? Here are the rules:
 Written as inference rules, these are:
 %
 \begin{mathpar}
-  \infer{ }{\istype{\Empty}}
+  \infer{ }{\Empty : \Univ}
   \and
-  \infer{e : \Empty \\ \istype{A}}{\absurd{A}{e} : A}
+  \infer{e : \Empty \\ A : \Univ}{\absurd{A}{e} : A}
   \and
   \infer{e : \Empty \\ s : A \\ t : A}{s \equiv_A t}
 \end{mathpar}
@@ -329,7 +342,7 @@ When such formalism becomes cumbersome we shall lapse into using the same symbol
 for several different points, but until then let us be very explicit.
 
 The deconstructor and the equations for $\Bool$ are as follows: given a
-dependent type $x : \Bool \vdash \istype{A(x)}$, points $s : A(\fal)$ and
+dependent type $A : \Bool \to \Univ$, points $s : A(\fal)$ and
 $t : A(\tru)$, and a point $b : \Bool$, there is a point
 %
 \begin{equation}
@@ -359,21 +372,124 @@ Two alternative, but less explicit notations for~\eqref{eq:ind-bool} are
   \end{cases}
 \end{equation*}
 %
-
+The deconstructor gets its symbol ``$\ind{}$'' because it can be read as an
+induction principle: there are two base cases, $\fal$ and $\tru$, and no
+induction step.
 
 
 \subsubsection{Dependent products $\dprod{x : A} B(x)$}
+\label{sec:product}
 
-\subsubsection{The natural numbers $\Nat$}
+The dependent product is our first example of a type-theoretic construction that
+has a somewhat interesting formation rule: if $A : \Univ$ and $B : A \to \Univ$
+then $\dprod{x : A} B(x) : \Univ$.
+
+The points of $\dprod{x : A} B(x)$ are \emph{(dependent) maps}, which take $x : A$ to a point of $B(x)$.
+These are formed using the so-called \emph{$\lambda$-abstraction}: given a dependent point
+%
+\begin{equation*}
+  x : A \vdash t(x) : B(x),
+\end{equation*}
+%
+there is a point
+%
+\begin{equation*}
+  \lam{x : A} t(x) : \dprod{x : A} B(x).
+\end{equation*}
+%
+A more familiar notation for $\lam{x : A} t(x)$ is
+%
+\begin{equation*}
+  x \mapsto t(x),
+\end{equation*}
+%
+which reads ``$x$ maps to $t(x)$''. The variable $x$ is bound in the
+$\lambda$-abstraction. When the type of $x$ is clear we shall abbreviate the
+$\lambda$-abstraction as $\lamx{x} t(x)$. Nested $\lambda$-abstractions
+%
+\begin{equation*}
+  \lam{x : A} \lam{y : B} \lam {z : C} t(x,y,z)
+\end{equation*}
+%
+may be abbreviated as $\lamx{x\, y\, z} t(x,y,z)$.
+
+Given a dependent map $f : \dprod{x : A} B(x)$ and a point $a : A$, we may form
+the \emph{application} $f(a) : B(a)$. We also write $f\,a$ instead of $f(a)$.
+
+Nested dependent products are not uncommon. A map
+%
+\begin{equation*}
+  f : \dprod{x : A} \dprod{y : B(x)} C(x, y)
+\end{equation*}
+%
+takes a point $a : A$ to a dependent map $f\,a : \dprod{y : B(a)} C(a, y)$. The
+map $f\,a$ can further be applied to a point $b : B(a)$ to give a point
+$(f \, a) \, b : C(a, b)$. Let us agree that application is right-associative,
+i.e., $f\,a\,b = (f \, a) \, b$.
+
+The equations governing $\lambda$-abstraction and application are:
+%
+\begin{align*}
+  (\lam{x : A} t(x))\, a &\equiv_{B(a)} t(a), \\
+  (\lam{x : A} f\,x)     &\equiv_{\dprod{x : A} B(x)} f.
+\end{align*}
+%
+The first equation is very familiar, but rarely written down. It states that in
+order to compute the value of a function $x \mapsto t(x)$ at $a$, we simply
+substitute $a$ for $x$ into the body of the function.
+
+\subsubsection{Exponentials $A \to B$}
+\label{sec:exponentials}
+
+A special case of dependent products occurs when the dependent type~$B(x)$ does not really depend on~$A$, i.e.,
+given two types $A$ and $B$, we define the \emph{exponential} or \emph{function type} $A \to B$ as the product
+%
+\begin{equation*}
+  A \to B \defeq \dprod{x : A} B.
+\end{equation*}
+%
+A point of $A \to B$ is a map $f$ which takes points of~$A$ to points of~$B$.
+Another notation for $A \to B$ is $B^A$.
 
 \subsubsection{Dependent sums $\dsum{x : A} B(x)$}
 
+
+
+\subsubsection{The natural numbers $\Nat$}
+
+The type of natural number $\Nat$ has two constructors:
+%
+\begin{itemize}
+\item $\zero : \Nat$,
+\item if $t : \Nat$ then $\succ{t} : \Nat$.
+\end{itemize}
+%
+The deconstructor is a form of induction principle. Suppose $A : \Nat \to \Univ$
+is a type which depends on~$\Nat$. Given $a : A(\zero)$,
+%
+\begin{equation*}
+  f : \dprod{k : \Nat} A(k) \to A(\succ{k}),
+\end{equation*}
+%
+and $n : \Nat$, there is a point
+%
+\begin{equation*}
+  \ind{\Nat}^A (a, f, n) : A(n),
+\end{equation*}
+%
+such that
+%
+\begin{align*}
+  \ind{\Nat}^A (a, f, \zero) &\equiv_{A(\zero)} a, \\
+  \ind{\Nat}^A (a, f, \succ{n}) &\equiv_{A(\succ{n})} f \, n \, (\ind{\Nat}^A (a, f, n)).
+\end{align*}
+
+
 \subsubsection{The universe $\Univ$}
+\label{sec:universe}
 
 
 \subsection{Derived constructions}
-
-\subsubsection{Exponentials $A \to B$}
 
 \subsubsection{Simple products $A \times B$}
 
