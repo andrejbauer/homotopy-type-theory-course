@@ -8,19 +8,15 @@ in the Spring of 2019.
 In this course we first overview the basics of classical homotopy theory. Starting with
 the notion of locally trivial bundles, we motivate the classical definitions of
 fibrations, from which we proceed to identify the abstract strucure of Quillen model
-categories. We consider chain complexes as an example of model categories, and build up
-enough material to be able to understand the natural ambient for homotopy theory, namely
-the simplicial sets.
+categories. We outline the basics of abstract homotopy theory in a Quillent model.
 
 In the second part we introduce homotopy type theory from the point of view of classical
 homotopy theory, deliberately avoiding the connections between homotopy type theory and
-computer science. The simplicial sets serve as the motivating model category from which we
-extract the basic type-theoretic constructions. We then show how type theory can be used
-to carry out homotopy-theoretic arguments abstractly and "synthetically". The fact that
-any construction expressed in homotopy type theory is homotopy invariant is both a
-blessing and a curse: a blessing because it never lets us step outside of the realm of
-homotopy theory, and a curse because we it never lets us step outside of the realm of
-homotopy theory.
+computer science. We show how type theory can be used to carry out homotopy-theoretic
+arguments abstractly and "synthetically". The fact that any construction expressed in type
+theory is homotopy invariant is both a blessing and a curse: a blessing because it never
+lets us step outside of the realm of homotopy theory, and a curse because we it never lets
+us step outside of the realm of homotopy theory.
 
 ## Course administration
 
