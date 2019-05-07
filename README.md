@@ -26,8 +26,22 @@ department.
 There will be two take-home exams, one for each part of the course.
 
 
-## Resources
+## Course materials
 
+### Homotopy theory
+
+[Anja Petković](https://anjapetkovic.com) has kindly provided her [course
+notes](http://www.andrej.com/zapiski/HoTT-2019/course-notes-part-I.pdf) for the first part
+of the course, with the caveat that they very likely contain mistakes. Thank you, Anja!
+
+### Homotopy type theory
+
+All lectures are recorded on video and can be watched in the [HoTT-2019 video
+channel](https://vimeo.com/channels/1457250). The lecture notes are also available
+[here](http://www.andrej.com/zapiski/HoTT-2019/).
+
+
+## External resources
 
 ### Homotopy theory
 
@@ -41,9 +55,6 @@ There is a wealth of resources available on the topic of homotopy theory. The fo
  * Daniel G. Quillen, [Homotopical algebra](https://www.springer.com/gp/book/9783540039143)
 
 ### Homotopy type theory
-
-All lectures are recorded on video and can be watched in the [HoTT-2019 video channel](https://vimeo.com/channels/1457250). The lecture notes are also available [here](http://www.andrej.com/zapiski/HoTT-2019/).
-
 
 Being a new topic, homotopy type theory is still developing. Consequently, reading
 material and resources are a bit more fluid and scattered. A central resource is the "HoTT book", although it is hard-going for the unexperienced:
