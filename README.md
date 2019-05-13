@@ -110,11 +110,19 @@ Here are some additional resources:
 
 * Homotopy extension property, cofibration, Eckmann-Hilton duality
 * Pushouts and retracts of cofibrations are cofibrations
-* Any map decomposes functorially as a composite of a cofibration followed by a `trivial` fibration
+* Any map decomposes functorially as a composite of a cofibration followed by a fibration
 * Quillen closed model category
 * Model category on Top with homotopy equivalences, Hurewicz fibrations, and Hurewicz cofibrations
 
-####  Loop spaces, suspensions and other gadgets
+####  Homotopy and the homotopy category
+
+* Cylinder object, left homotopy
+* Path object, right homotopy
+* Correspondence between left and right homotopies for maps X->Y where X is cofibrant and Y is fibrant
+* Abstract localization and the homotopy category
+* Cylinder object, path objects, and correspondence in the category of pointed topological spaces
+
+#### Homotopies of homotopies in and abstract model category. Suspension in a pointed model category
 
 ### Homotopy type theory
 
