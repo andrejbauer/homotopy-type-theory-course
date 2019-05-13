@@ -118,11 +118,16 @@ Here are some additional resources:
 
 * Cylinder object, left homotopy
 * Path object, right homotopy
-* Correspondence between left and right homotopies for maps X->Y where X is cofibrant and Y is fibrant
+* Homotopy classes of maps X->Y where X is cofibrant and Y is fibrant
 * Abstract localization and the homotopy category
 * Cylinder object, path objects, and correspondence in the category of pointed topological spaces
 
 #### Homotopies of homotopies in and abstract model category. Suspension in a pointed model category
+
+* Left homotopy of left homotopies with motivation from Top
+* Correspondence between left and right homotopies
+* Category Hom(X,Y) with objects morphisms X->Y and morphisms equivalence classes of left homotopies; interpretation in Top
+* Suspension in a pointed model category and the suspension functor on its homotopy category
 
 ### Homotopy type theory
 
