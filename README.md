@@ -158,7 +158,9 @@ Outline:
     * the groupoid of paths
 * Iterated identity types
 
-#### Truncations
+#### Homotopy levels
+
+[Video](https://vimeo.com/334915245) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-06/HoTT-2019-05-06%20Homotopy%20levels.pdf).
 
 * Contractible spaces
 * Propositions, sets, and h-levels
@@ -168,26 +170,28 @@ Outline:
     * loop space vs. fundamental group
     * path-connectedness vs. contractibility
     * surjectivity vs. split epimorphism
-* Whiteheads's principle
 
-#### Synthetic homotopy theory
+
+#### Equivalences
+
+* Structure vs. property in mathematics
+* Having an inverse is not a property
+* Homotopy equivalences
+* Example: universal peroprty stated as an equivalence
+
+#### Higher-inductive types
 
 * Inductive types, examples
 * Higher-inductive types (HITs)
 * Examples: circle, interval, suspension
 * Truncations as HITs
 
-#### Univalence axiom
+#### Univalence
 
 * The idea that equivalent structures are equal
-* Homotopy equivalences in type theory
+* Univalent type families
 * Univalence axiom
-* Consequences of the univalence axiom
-
-#### Applications of univalence: loop space, `π₁(S¹) = Z`
-
-* The loop space of a pointed space
-* The fundamental group of a pointed space
-* Proof that `π₁(S¹) = Z`
+* Some consequences of the univalence axiom
+* Example: `π₁(S¹) = Z`
 
 
