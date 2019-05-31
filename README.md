@@ -137,8 +137,6 @@ Here are some additional resources:
 
 [Video](https://vimeo.com/330992581) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-04-16/HoTT-2019-04-16%20Type%20theory.pdf).
 
-Outline:
-
 * Type theory as a theory of constructions
 * The notion of a dependent type
 * Types as sets, dependent types as families of sets
@@ -151,8 +149,6 @@ Outline:
 #### Identity types as path objects
 
 [Video](https://vimeo.com/332004992) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-04-23/HoTT-2019-04-23%20Identity%20types.pdf).
-
-Outline:
 
 * Identity types as path objects
 * Type-theoretic rules for identity types
