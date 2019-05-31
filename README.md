@@ -23,7 +23,7 @@ us step outside of the realm of homotopy theory.
 We meet weekly on Tuesdays from 14:00 to 16:00 in lecture room 3.06 at the Mathematics
 department.
 
-There will be two take-home exams, one for each part of the course.
+The take-home exam is now available in [`exam.pdf`](./exam.pdf).
 
 
 ## Course materials
@@ -98,7 +98,7 @@ Here are some additional resources:
 
 ####  Fibrations of topological spaces, and their classification
 
-* Hurewicz fibrations; definition in terms of the right lifting property with respect to inclusions Z->Zx[0,1]
+* Hurewicz fibrations; definition in terms of the right lifting property with respect to inclusions `Z → Z × [0,1]`
 * Pullbacks and retracts of fibrations are fibrations
 * Any map decomposes functorially as a composite of a SDR inclusion followed by fibration
 * The concept of a lifting function
@@ -112,22 +112,24 @@ Here are some additional resources:
 * Pushouts and retracts of cofibrations are cofibrations
 * Any map decomposes functorially as a composite of a cofibration followed by a fibration
 * Quillen closed model category
-* Model category on Top with homotopy equivalences, Hurewicz fibrations, and Hurewicz cofibrations
+* Model category on `Top` with homotopy equivalences, Hurewicz fibrations, and Hurewicz cofibrations
 
 ####  Homotopy and the homotopy category
 
 * Cylinder object, left homotopy
 * Path object, right homotopy
-* Homotopy classes of maps X->Y where X is cofibrant and Y is fibrant
+* Homotopy classes of maps `X → Y` where `X` is cofibrant and `Y` is fibrant
 * Abstract localization and the homotopy category
 * Cylinder object, path objects, and correspondence in the category of pointed topological spaces
 
-#### Homotopies of homotopies in and abstract model category. Suspension in a pointed model category
+#### Homotopies and suspensions in model categories
 
-* Left homotopy of left homotopies with motivation from Top
+* Left homotopy of left homotopies in a model category, motivated by `Top`
 * Correspondence between left and right homotopies
-* Category Hom(X,Y) with objects morphisms X->Y and morphisms equivalence classes of left homotopies; interpretation in Top
-* Suspension in a pointed model category and the suspension functor on its homotopy category
+* The category `Hom(X,Y)` with objects morphisms `X → Y` and morphisms equivalence classes
+  of left homotopies; interpretation in `Top`
+* Suspension in a pointed model category and the suspension functor on its homotopy
+  category
 
 ### Homotopy type theory
 
@@ -171,8 +173,9 @@ Outline:
     * path-connectedness vs. contractibility
     * surjectivity vs. split epimorphism
 
-
 #### Equivalences
+
+[Video](https://vimeo.com/336117432) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-14/HoTT-2019-05-14%20Equivalences.pdf).
 
 * Structure vs. property in mathematics
 * Having an inverse is not a property
@@ -181,15 +184,18 @@ Outline:
 
 #### Higher-inductive types
 
+[Video](https://vimeo.com/337960032) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-21/HoTT-2019-05-21%20Higher%20inductive%20types.pdf).
+
 * Inductive types, examples
 * Higher-inductive types (HITs)
 * Examples: circle, interval, suspension
 * Truncations as HITs
 
-#### Univalence
+#### Univalence and `π₁(S¹) = Z`
+
+[Video](https://vimeo.com/338899939) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-28/HoTT-2019-05-28%20Univalence%20and%20Π₁(S¹)%20=%20Z.pdf).
 
 * The idea that equivalent structures are equal
-* Univalent type families
 * Univalence axiom
 * Some consequences of the univalence axiom
 * Example: `π₁(S¹) = Z`
