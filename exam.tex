@@ -1,0 +1,205 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{a4wide}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{color}
+\usepackage{times}
+\usepackage{enumerate}
+\usepackage{xypic}
+
+\newcommand\RR{\mathbb{R}}
+\newcommand\ZZ{\mathbb{Z}}
+\newcommand\EEE{\mathcal{E}}
+\newcommand\CCC{\mathcal{C}}
+\newcommand\DDD{\mathcal{D}}
+\newcommand{\booktitle}[1]{\textit{#1}}
+\newcommand{\setof}[1]{\left\{#1\right\}}
+\newcommand\lqs{\leqslant}
+\newcommand\gqs{\geqslant}
+\newcommand\id{\mathop{\mathrm{id}}\nolimits}
+\newcommand\pr{\mathop{\mathrm{pr}}\nolimits}
+\newcommand\bdsc{{\mathrm{bdSeq}}({\mathcal C})}
+\newcommand\ctop{\underline{\mathrm{Top}}}
+\newcommand\colim{\qopname\relax n{colim}}
+
+\newcommand{\dsum}[1]{\Sigma (#1) \,.\,}
+\newcommand{\dprod}[1]{\Pi (#1) \,.\,}
+\newcommand{\univ}{\mathcal{U}}
+\newcommand{\susp}[1]{\mathsf{Susp}(#1)}
+\newcommand{\two}{\mathsf{2}}
+\newcommand{\eqv}{\simeq}
+
+{\theoremstyle{definition}
+\newtheorem{problem}{Problem}}
+
+\begin{document}
+\title{Homotopy (Type) Theory take-home exam}
+\date{May 31, 2019}
+\author{}
+\maketitle
+
+For full credit solve \emph{at least 51 points} worth of problems.
+%
+As you are training to become a researcher, you are free to refer to constructions and
+proofs in existing literature, namely peer-reviewed papers and monographs. References to
+blog posts and other non-standard sources are allowed, but in those cases you need to
+verify the veracity of the claims yourself. It is probably a good idea to verify your
+sources even when they are of a reputable origin. In the end, you are responsible for your
+solutions.
+
+\section*{Part I: homotopy theory}
+
+\begin{problem}[7 points]
+  Let $n\gqs 1$, $1\lqs k\lqs n-1$, and let $G_k(\RR^n)$ denote the set of $k$-planes in
+  $\RR^n$. Also, let $V_k(\RR^n)$ denote the set of (ordered) $k$-tuples of orthonormal
+  vectors in $\RR^n$. Topologize the latter by viewing it as a subset of $\RR^{n\times k}$
+  in the obvious way.
+  %
+  \begin{enumerate}[(a)]
+  \item   Topologize $G_k(\RR^n)$ as a quotient space of $V_k(\RR^n)$.
+  \item Show that
+    $E_k^n=\setof{(\Lambda,x)\,\vert\,\Lambda\in
+      G_k(\RR^n),\,x\in\Lambda}\subset G_k(\RR^n)\times\RR^n$,
+    together with the obvious projection map, is a vector bundle of
+    rank $k$ over $G_k(\RR^n)$.
+  \item   Let $S^2$ be the $2$-sphere and let $f\colon S^2\to G_2(\RR^3)$ assign to $\zeta\in S^2$
+    the plane perpendicular to $\zeta$. Show that $f$ is continuous and identify the pullback
+    bundle $f^*(E_2^3)$. You may want to consult Davis-Kirk \cite{d-k} for the latter.
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}[7 points]
+  Suppose given $p_0\colon E_0\to B$ and $p_1\colon E_1\to B$ in the category of
+  topological spaces over $B$. A map $f\colon E_0\to E_1$ over $B$ is called a {\it fibre
+    homotopy equivalence} if there exist a map $g\colon E_1\to E_0$ over $B$ and
+  homotopies $gf\simeq\id_{E_0}$ and $fg\simeq\id_{E_1}$ over $B$. Here, $E_i\times[0,1]$
+  is a space over $B$ by virtue of $P_i=p_i\circ\pr_{E_i}$. Let $p\colon E\to B$ be a
+  fibration and let $h\colon X\times[0,1]\to B$ be a homotopy from $h_0$ to $h_1$. Using a
+  lifting function for $p$, construct an explicit fibre homotopy equivalence of pullbacks
+  $h_0^*(E)$ and $h_1^*(E)$ as spaces over $X$.
+\end{problem}
+  
+
+\begin{problem}[7 points]
+  Look up the definition of a {\it diagram} in $\CCC$ with a given {\it shape} $\DDD$ and its colimit in Dwyer-Spalinski \cite{d-s}.
+  \begin{enumerate}[(a)]
+  \item   Make sense of the colimit functor $\colim\CCC^\DDD\to\CCC$ for a finite (small) category $\CCC$
+    with finite (small) colimits and a finite (small) shape $\DDD$. (Define it and prove that it is a functor.)
+  \item Consider the diagrams $\DDD$ and $\EEE$,
+    %
+    \begin{equation*}
+      \DDD:
+      % 
+      \vcenter{\xymatrix{
+        {\bullet} \ar[rr]
+                  \ar[dd] & &
+        {\bullet} \ar[dd] \\
+        & & \\
+        {\bullet} \ar[rr] & &
+        {\bullet}
+      }}
+      \qquad\qquad
+      \EEE:
+      \vcenter{\xymatrix{
+        {\bullet} \ar[rr]
+                  \ar[dd] & &
+        {\bullet} \ar[dd] \ar[ld] \\
+        & {\bullet} \ar[rd] & \\
+        {\bullet} \ar[rr] \ar[ur] & &
+        {\bullet}
+      }}
+    \end{equation*}
+    %
+    Employing the pushout, define a suitable map $\CCC^\DDD\to\CCC^\EEE$ and study its properties.
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}[7 points]
+  Let $\CCC$ be a category. A bounded direct sequence in $\CCC$ is a diagram of objects and morphisms of $\CCC$ of the form
+  %
+  \begin{equation*}
+    \dots \xrightarrow{\xi_{-2}} X_{-1}
+    \xrightarrow{\xi_{-1}} X_0
+    \xrightarrow{\xi_0} X_1
+    \xrightarrow{\xi_1} X_2
+    \xrightarrow{\xi_2} X_3
+    \xrightarrow{\xi_3}
+    \dots
+  \end{equation*}
+  %
+  where for all small enough $i\in\ZZ$, the $\xi_i$ are identity morphisms. We denote such
+  a direct sequence simply by $\setof{(X_i,\xi_i)}$. A morphism
+  $f\colon\setof{(X_i,\xi_i)}\to\setof{(Y_i,\eta_i)}$ is a collection of morphisms
+  $f_i\colon X_i\to Y_i$ in $\CCC$ satisfying $f_{i+1}\xi_i=\eta_if_i$ for all $i$, such
+  that $f_i=f_{i-1}$ for all small enough $i$ (i.e. for all $i\lqs b$ where $b\in\ZZ$
+  depends on $f$). This defines a category of bounded direct sequences in $\CCC$, which we
+  denote $\bdsc$.
+
+  Suppose that $\CCC$ is a model category. We call $f\colon\setof{(X_i,\xi_i)}\to\setof{(Y_i,\eta_i)}$ a weak equivalence
+  (respectively a fibration) if all $f_i$ are weak equivalences (respectively fibrations) in $\CCC$. Next, we call $f$ a cofibration
+  if for all $i$, the natural morphism $Y_i\sqcup_{X_i}X_{i+1}\xrightarrow{\eta_i+f_{i+1}}Y_{i+1}$ is a cofibration in $\CCC$, and, moreover, $f_i$ is
+  a cofibration in $\CCC$ for all small enough $i$.
+  \begin{enumerate}[(a)]
+  \item   Prove that $\bdsc$ is a model category.
+  \item   Identify the fibrant and cofibrant objects in $\bdsc$.
+  \item   Suppose that $\CCC$ has small colimits. Define a colimit functor $\colim\bdsc\to\CCC$ and prove that
+    it preserves cofibrations and trivial cofibrations. {\bf Hint.} Use adjoint functors.
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}[7 points]
+  Let $\CCC$ be a pointed model category. For a cofibrant $X$, we defined an association
+  $[\Sigma X,Y]\to\pi_1^l(X,Y)=\pi_1^l(X,Y;0,0)$ which is a natural equivalence of
+  functors $[\Sigma X,\_]$ and $\pi_1^l(X,\_)$ on the category $\CCC_f$ (the full
+  subcategory of $\CCC$ of fibrant objects). See Theorem 2 of Quillen \cite{quillen} for a
+  proof. State the dual of the former and prove it. \textbf{Warning.} Mind the notation.
+\end{problem}
+
+\section*{Part II: homotopy type theory}
+
+\begin{problem}[5 points]
+  Prove that the coproducts have the expected universal property:
+  %
+  \begin{equation*}
+    (A + B \to C) \eqv (A \to C) \times (B \to C).
+  \end{equation*}
+\end{problem}
+
+\begin{problem}[5 points]
+  Let $A$ be a type and $a : A$ a point. Prove that $\dsum{x : A} a =_A x$ is
+  contractible.
+\end{problem}
+
+\begin{problem}[5 points]
+  Prove that $\mathbb{N}$ is a set.
+\end{problem}
+
+\begin{problem}[5 points]
+  Show that $(\two \eqv \two) \eqv \two$.
+\end{problem}
+
+\begin{problem}[5 points]
+  Show that $S^1 \eqv \susp{\two}$, where $S^1$ is the circle and $\susp{\two}$ the
+  suspension of~$\two$.
+\end{problem}
+
+\begin{problem}[5 points]
+  Construct the \emph{double cover} of the circle as a dependent type, i.e.,
+  a dependent type $D : S^1 \to \univ$ such that $D(\mathsf{base}) \eqv \two$ and
+  $(\dsum{x : S^1} D(x)) \eqv S^1$.
+\end{problem}
+
+\begin{problem}[5 points]
+  How would you define the \emph{Möbius band} as a type?
+\end{problem}
+
+\begin{thebibliography}{00}
+        \bibitem{d-k}           J.~F.~Davis, P.~Kirk, \booktitle{Lecture notes in algebraic topology.} Graduate Studies in Mathematics, 35. American Mathematical Society, Providence, RI, 2001.
+        \bibitem{d-s}           W.~G.~Dwyer, J.~Spalinski, \booktitle{Homotopy theories and model categories.} Handbook of algebraic topology, 73\--126,
+                                North-Holland, Amsterdam, 1995.
+        \bibitem{quillen}       D.~G.~Quillen, \booktitle{Homotopical algebra.} Lecture Notes in Mathematics, No. 43. Springer-Verlag, Berlin-New York, 1967.
+\end{thebibliography}
+
+\end{document}
