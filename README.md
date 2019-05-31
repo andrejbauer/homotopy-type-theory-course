@@ -8,7 +8,7 @@ in the Spring of 2019.
 In this course we first overview the basics of classical homotopy theory. Starting with
 the notion of locally trivial bundles, we motivate the classical definitions of
 fibrations, from which we proceed to identify the abstract strucure of Quillen model
-categories. We outline the basics of abstract homotopy theory in a Quillent model.
+categories. We outline the basics of abstract homotopy theory in a Quillen model.
 
 In the second part we introduce homotopy type theory from the point of view of classical
 homotopy theory, deliberately avoiding the connections between homotopy type theory and
