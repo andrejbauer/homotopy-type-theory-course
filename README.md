@@ -176,7 +176,7 @@ Here are some additional resources:
 * Structure vs. property in mathematics
 * Having an inverse is not a property
 * Homotopy equivalences
-* Example: universal peroprty stated as an equivalence
+* Example: universal property stated as an equivalence
 
 #### Higher-inductive types
 
