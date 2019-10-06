@@ -15,8 +15,8 @@ homotopy theory, deliberately avoiding the connections between homotopy type the
 computer science. We show how type theory can be used to carry out homotopy-theoretic
 arguments abstractly and "synthetically". The fact that any construction expressed in type
 theory is homotopy invariant is both a blessing and a curse: a blessing because it never
-lets us step outside of the realm of homotopy theory, and a curse because we it never lets
-us step outside of the realm of homotopy theory.
+lets us step outside of the realm of homotopy theory, and a curse because we never
+step outside of the realm of homotopy theory.
 
 ## Course administration
 
