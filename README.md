@@ -37,7 +37,7 @@ of the course, with the caveat that they very likely contain mistakes. Thank you
 ### Homotopy type theory
 
 All lectures are recorded on video and can be watched in the [HoTT-2019 video
-channel](https://vimeo.com/channels/1457250). The lecture notes are also available
+channel](https://www.youtube.com/playlist?list=PL-47DDuiZOMCRDiXDZ1fI0TFLQgQqOdDa). The lecture notes are also available
 [here](http://www.andrej.com/zapiski/HoTT-2019/).
 
 
@@ -135,7 +135,7 @@ Here are some additional resources:
 
 #### Type theory (motivated by simplicial sets): `Π`, `Σ`
 
-[Video](https://vimeo.com/330992581) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-04-16/HoTT-2019-04-16%20Type%20theory.pdf).
+[Video](https://youtu.be/FBjz8mFXH7M) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-04-16/HoTT-2019-04-16%20Type%20theory.pdf).
 
 * Type theory as a theory of constructions
 * The notion of a dependent type
@@ -148,7 +148,7 @@ Here are some additional resources:
 
 #### Identity types as path objects
 
-[Video](https://vimeo.com/332004992) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-04-23/HoTT-2019-04-23%20Identity%20types.pdf).
+[Video](https://youtu.be/ZMF_2Hr16M0) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-04-23/HoTT-2019-04-23%20Identity%20types.pdf).
 
 * Identity types as path objects
 * Type-theoretic rules for identity types
@@ -158,7 +158,7 @@ Here are some additional resources:
 
 #### Homotopy levels
 
-[Video](https://vimeo.com/334915245) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-06/HoTT-2019-05-06%20Homotopy%20levels.pdf).
+[Video](https://youtu.be/Yy_U6_cvyLM) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-06/HoTT-2019-05-06%20Homotopy%20levels.pdf).
 
 * Contractible spaces
 * Propositions, sets, and h-levels
@@ -171,7 +171,7 @@ Here are some additional resources:
 
 #### Equivalences
 
-[Video](https://vimeo.com/336117432) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-14/HoTT-2019-05-14%20Equivalences.pdf).
+[Video](https://youtu.be/BuI62-o3Ds8) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-14/HoTT-2019-05-14%20Equivalences.pdf).
 
 * Structure vs. property in mathematics
 * Having an inverse is not a property
@@ -180,7 +180,7 @@ Here are some additional resources:
 
 #### Higher-inductive types
 
-[Video](https://vimeo.com/337960032) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-21/HoTT-2019-05-21%20Higher%20inductive%20types.pdf).
+[Video](https://youtu.be/6K80dcmz7nI) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-21/HoTT-2019-05-21%20Higher%20inductive%20types.pdf).
 
 * Inductive types, examples
 * Higher-inductive types (HITs)
@@ -189,7 +189,7 @@ Here are some additional resources:
 
 #### Univalence and `π₁(S¹) = Z`
 
-[Video](https://vimeo.com/338899939) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-28/HoTT-2019-05-28%20Univalence%20and%20Π₁(S¹)%20=%20Z.pdf).
+[Video](https://youtu.be/GX3igiADQVI) and [notes](http://www.andrej.com/zapiski/HoTT-2019/HoTT-2019-05-28/HoTT-2019-05-28%20Univalence%20and%20Π₁(S¹)%20=%20Z.pdf).
 
 * The idea that equivalent structures are equal
 * Univalence axiom
