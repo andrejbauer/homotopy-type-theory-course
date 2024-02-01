@@ -7,7 +7,7 @@ in the Spring of 2019.
 
 In this course we first overview the basics of classical homotopy theory. Starting with
 the notion of locally trivial bundles, we motivate the classical definitions of
-fibrations, from which we proceed to identify the abstract strucure of Quillen model
+fibrations, from which we proceed to identify the abstract structure of Quillen model
 categories. We outline the basics of abstract homotopy theory in a Quillen model.
 
 In the second part we introduce homotopy type theory from the point of view of classical
@@ -65,14 +65,14 @@ The following introductory notes are targeted at teaching homotopy type theory:
 
 * Egbert Rijke, [Introduction to Homotopy Type Theory](http://www.andrew.cmu.edu/user/erijke/hott/), a graduate course taught at Carnegie Mellon University. The accompanying [lecture notes](http://www.andrew.cmu.edu/user/erijke/hott/hott_intro.pdf) is recommended as reading material.
 
-* [Martín Escardó](https://www.cs.bham.ac.uk/~mhe/), [Introduction to Univalent Foundations of Mathematics with Agda](https://www.cs.bham.ac.uk/~mhe/HoTT-UF-in-Agda-Lecture-Notes/HoTT-UF-Agda.html) is a set of lecture notes written in literal Agda (text interspersed with [Agda code](http://wiki.portal.chalmers.se/agda)). It explains the basics very thoroughly and very well. You may safely ignore the fact that it is all formalized and computer-checked, altought you may also be interested in learning how to use Agda, in which case you can consult the [lecture notes GitHub repository](https://github.com/martinescardo/HoTT-UF-Agda-Lecture-Notes).
+* [Martín Escardó](https://www.cs.bham.ac.uk/~mhe/), [Introduction to Univalent Foundations of Mathematics with Agda](https://www.cs.bham.ac.uk/~mhe/HoTT-UF-in-Agda-Lecture-Notes/HoTT-UF-Agda.html) is a set of lecture notes written in literal Agda (text interspersed with [Agda code](http://wiki.portal.chalmers.se/agda)). It explains the basics very thoroughly and very well. You may safely ignore the fact that it is all formalized and computer-checked, although you may also be interested in learning how to use Agda, in which case you can consult the [lecture notes GitHub repository](https://github.com/martinescardo/HoTT-UF-Agda-Lecture-Notes).
 
 Here are some additional resources:
 
 * [Daniel Grayson](https://faculty.math.illinois.edu/~dan/): [An introduction to univalent foundations for mathematicians](https://arxiv.org/pdf/1711.01477.pdf), targeted at a general mathematical audience,
 * [Michael Shulman](https://home.sandiego.edu/~shulman/): [Homotopy type theory: the logic of space](https://arxiv.org/abs/1703.03007),
   worth reading if you would like to expand your understanding of "space",
-* [Steve Awodey](http://www.andrew.cmu.edu/user/awodey/) and [Michael Warren](http://mawarren.net): [Homotopy theoretic models of identity types](https://arxiv.org/abs/0709.0248), the original paper introducing the interpreation of identity types in Quillen model categories.
+* [Steve Awodey](http://www.andrew.cmu.edu/user/awodey/) and [Michael Warren](http://mawarren.net): [Homotopy theoretic models of identity types](https://arxiv.org/abs/0709.0248), the original paper introducing the interpretation of identity types in Quillen model categories.
 
 ## Course outline
 
